@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "38039739116",
+    "project_id": "piiko-128cd",
+    "storage_bucket": "piiko-128cd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:38039739116:android:586ef406d4dedaae14e3c9",
+        "android_client_info": {
+          "package_name": "com.tangenup.piiko"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "38039739116-k9399csocha4gvhr7edf33lrlg70a7va.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tangenup.piiko",
+            "certificate_hash": "4a26e6835dbbd1bdd1c646793e11dda3e0cde040"
+          }
+        },
+        {
+          "client_id": "38039739116-02fv6ngv13bvqfsmbapl08vqg52grums.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8byjBf0vjC63HbfzHs-O0rSOc4S2Pdj4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "38039739116-02fv6ngv13bvqfsmbapl08vqg52grums.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

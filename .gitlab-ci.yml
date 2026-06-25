@@ -1,0 +1,98 @@
+stages:
+  - internal-release
+  - staging-deploy
+  # - promote
+  # - production-release
+  # - staging-versioned-deploy
+  # - production-deploy
+
+create-latest-image:
+  stage: internal-release
+  image: docker:latest
+  services:
+   - docker:dind
+  script:
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
+    - docker build -t $CI_REGISTRY_IMAGE:latest .
+    - docker push $CI_REGISTRY_IMAGE:latest
+  only:
+    - master-web
+    
+deploy-latest-staging:
+  stage: staging-deploy
+  image: registry.gitlab.com/nithinbose/deployer
+  script:
+    - deployer webhook trigger deploy k8s staging $CI_PROJECT_NAME latest
+  only:
+    - master-web
+  environment:
+    name: staging
+
+# promote-to-release:
+#   stage: promote
+#   image: registry.gitlab.com/nithinbose/deployer
+#   script:
+#     - deployer promote $CI_COMMIT_REF_NAME release $CI_PROJECT_ID $GITLAB_USER_ID "$GITLAB_USER_NAME"
+#   only:
+#     - master
+#   when: manual
+
+# release-major-version:
+#   stage: production-release
+#   image: registry.gitlab.com/nithinbose/deployer
+#   script:
+#     - deployer release server major $CI_PROJECT_ID $GITLAB_USER_ID "$GITLAB_USER_NAME"
+#   only:
+#     - release
+#   when: manual
+
+# release-minor-version:
+#   stage: production-release
+#   image: registry.gitlab.com/nithinbose/deployer
+#   script:
+#     - deployer release server minor $CI_PROJECT_ID $GITLAB_USER_ID "$GITLAB_USER_NAME"
+#   only:
+#     - release
+#   when: manual
+
+# release-patch-version:
+#   stage: production-release
+#   image: registry.gitlab.com/nithinbose/deployer
+#   script:
+#     - deployer release server patch $CI_PROJECT_ID $GITLAB_USER_ID "$GITLAB_USER_NAME"
+#   only:
+#     - release
+#   when: manual
+
+# create-versioned-image:
+#   stage: production-release
+#   image: docker:latest
+#   services:
+#    - docker:dind
+#   script:
+#     - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
+#     - docker build -t $CI_REGISTRY_IMAGE:$CI_COMMIT_TAG .
+#     - docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_TAG
+#   only:
+#     - tags
+
+# staging-deploy-versioned:
+#   stage: staging-versioned-deploy
+#   image: registry.gitlab.com/nithinbose/deployer
+#   script:
+#     - deployer webhook trigger deploy k8s staging $CI_PROJECT_NAME $CI_COMMIT_TAG
+#   only:
+#     - tags
+#   environment:
+#     name: staging
+
+# production-deploy-versioned:
+#   stage: production-deploy
+#   image: registry.gitlab.com/nithinbose/deployer
+#   script:
+#     - deployer webhook trigger deploy k8s production $CI_PROJECT_NAME $CI_COMMIT_TAG
+#   only:
+#     - tags
+#   environment:
+#     name: production
+#   when: manual

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>38039739116-fjjsr18r9q2em29gd1rplaap4l04d7ph.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.38039739116-fjjsr18r9q2em29gd1rplaap4l04d7ph</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>38039739116-k9399csocha4gvhr7edf33lrlg70a7va.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDEeBDI5nPAr_hL9so8KEr1X8-pJ7gpqa8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>38039739116</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.piikoApp</string>
+	<key>PROJECT_ID</key>
+	<string>piiko-128cd</string>
+	<key>STORAGE_BUCKET</key>
+	<string>piiko-128cd.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:38039739116:ios:d25e72562373472514e3c9</string>
+</dict>
+</plist>

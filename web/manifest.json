@@ -1,6 +1,6 @@
 {
-    "name": "piiko_app",
-    "short_name": "piiko_app",
+    "name": "aap",
+    "short_name": "aap",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

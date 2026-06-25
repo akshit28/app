@@ -90,6 +90,7 @@ class Facility {
     String code;
     List<BatchType>? batchTypes;
     String? referralCode;
+    dynamic defaultTestGroup;
 
     Facility({
         required this.id,
@@ -97,6 +98,7 @@ class Facility {
         required this.code,
         this.batchTypes,
         this.referralCode,
+        this.defaultTestGroup,
     });
 
     factory Facility.fromJson(Map<String, dynamic> json) => Facility(
@@ -105,6 +107,7 @@ class Facility {
         code: json["code"],
         batchTypes: json["batch_types"] == null ? [] : List<BatchType>.from(json["batch_types"]!.map((x) => BatchType.fromJson(x))),
         referralCode: json["referral_code"],
+        defaultTestGroup: json["default_test_group"],
     );
 
     Map<String, dynamic> toJson() => {
@@ -113,6 +116,7 @@ class Facility {
         "code": code,
         "batch_types": batchTypes == null ? [] : List<dynamic>.from(batchTypes!.map((x) => x.toJson())),
         "referral_code": referralCode,
+        "default_test_group": defaultTestGroup,
     };
 }
 
