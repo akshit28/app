@@ -1,0 +1,23 @@
+# Flutter/Dart generated files
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+build/
+
+# IDE metadata
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+
+# OS metadata
+.DS_Store
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
